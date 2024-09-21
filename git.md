@@ -75,3 +75,9 @@ cat .git/HEAD
 也可能顯示：96fa6899ea34697257e84865fefc56beb42d6390，表示HEAD目前指向某個commit\
 而**Detached HEAD**的意思就是HEAD指向不關於任何branch的commit\
 此時會面臨無法切換branch、做新的commit等等問題，git的歷史管理會出現問題。
+
+## 6. Commit Style
+當在團體協作時，無論是公司或學校專案的情境，讓大家了解各個commit在做甚麼是必要的事情\
+因此我整理了自己覺得可行且美觀的Commit Style，資料參考自：
+* ericavonb/git-commit-style-guide.md: https://gist.github.com/ericavonb/3c79e5035567c8ef3267
+* Git Commit Message 這樣寫會更好，替專案引入規範與範例（WadeHuang的學習迷航記）: https://wadehuanglearning.blogspot.com/2019/05/commit-commit-commit-why-what-commit.html
