@@ -78,6 +78,62 @@ cat .git/HEAD
 
 ## 6. Commit Style
 當在團體協作時，無論是公司或學校專案的情境，讓大家了解各個commit在做甚麼是必要的事情\
-因此我整理了自己覺得可行且美觀的Commit Style，資料參考自：
+因此我整理並依自己的狀況，試著發展出一套可行、美觀的Commit Style，資料參考自：
 * ericavonb/git-commit-style-guide.md: https://gist.github.com/ericavonb/3c79e5035567c8ef3267
 * Git Commit Message 這樣寫會更好，替專案引入規範與範例（WadeHuang的學習迷航記）: https://wadehuanglearning.blogspot.com/2019/05/commit-commit-commit-why-what-commit.html
+
+在commit時的commit types應是最重要的一環，以下為table說明幾種實用的type: 
+
+| Type          | Type Guide                                 |
+| ------------- |:------------------------------------------:|
+| docs          | 新增文字描述，如開發進度、註解等              |
+| fix           | 針對main branch上的bug修復                  |
+| refactor      | 既有功能不變，調整程式碼的邏輯flow、效率等等   |
+| revert        | 還原至某個commit                            |
+| chore         | 維護程式碼，如更新package                    |
+| init          | 初始commit                                  |
+
+以上是如果需要commit message時，使用的type commit style\
+定義好type之後，則是剩下commit message的撰寫格式：
+
+```
+{type}({scope}): {subject}
+<BLANK LINE>
+({body})
+{footer}
+```
+* scope描述這個改動專案的哪個module或檔案，可省略
+* subject簡述這次commit的改動
+* body細節描述這次commit的改動，可省略
+* footer主要註明版號
+* 使用revert時，格式應為 `revert: type(scope): subject(commit id)`
+
+例如：
+
+```
+docs(readme.md): add instructions to xxx.js
+issue 722
+```
+```
+revert: refactor(api): refine xx event call logic for possible future expansions of the feature.
+issue 309
+```
+```
+chore(login): update xxx package 1.3 > 1.6
+issue 920
+```
+而因為我想像的團隊模板是使用*GitHub Flow*或*Trunk-Based*等較為快速的branch model
+所以若commit type是:
+
+* feat（新增功能）
+* hotfix（feature branch的bug修復）
+
+則直接使用branch name替代commit message即可，閱讀和工作上會比較有效率
+例如：
+```
+feat/issue309-add-forget-password
+```
+```
+hotfix/issue722-fix-spelling-error
+```
+
