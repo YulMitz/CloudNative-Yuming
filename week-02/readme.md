@@ -9,10 +9,10 @@ node -v
 2. nvm和npm
 
 \
-nvm和npm都是在Node.js開發環境下的重要工具
+nvm和npm都是在Node.js開發環境下的重要工具：
 
 
-* npm (Node Package Manager)
+* npm (Node Package Manager)\
 npm提供了一套CLI來管理JavaScript的package和dependency，另一方面則是npm自己就是最大的開源套件供應。\
 管理package方面，有適用的指令：
 ```
@@ -27,7 +27,7 @@ npm publish
   "type": "module"
 }
 ```
-* nvm (Node Version Manager)
+* nvm (Node Version Manager)\
 nvm是Node.js的版本管理工具，開發者可以在不同版本環境下進行切換\
 比如說，切換到特定版本的Node.js
 ```
